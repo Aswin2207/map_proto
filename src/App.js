@@ -2,6 +2,8 @@ import './App.css';
 import React,{ useState,componentDidMount} from 'react';
 import Map from "./Map";
 import Geocode from "react-geocode";
+import { FaStarOfLife } from 'react-icons/fa';
+
 
 Geocode.setApiKey("AIzaSyDBIF6tEKyTxtxnH6zM_US7Jg4s6eM8VLQ");
 Geocode.setLanguage("en");
@@ -146,7 +148,7 @@ class App extends React.Component{
       "buildName": this.state.buildName,
       "area": this.state.area
     }
-   fetch("http://localhost:3000/similarPlaces",{method:'POST',headers: {'Content-Type': 'application/json'},body: JSON.stringify(post) })
+   fetch("https://gplaces.herokuapp.com/similarPlaces",{method:'POST',headers: {'Content-Type': 'application/json'},body: JSON.stringify(post) })
     .then(res => res.json())
     .then(
       (result) => {
@@ -173,7 +175,8 @@ class App extends React.Component{
     <input type="text" name='doorNbr' value={this.state.doorNbr} onChange={this.handleState}   className="form-control"  aria-describedby="emailHelp" placeholder="Enter door No"/>
   </div>
   <div className="form-group col-lg-3 pt-3  pb-5">
-    <label >Building Name</label>
+    <label >Building Name <sup className='mandatory'><FaStarOfLife/></sup></label>
+
     <input  name='buildName' value={this.state.buildName} onChange={this.handleState}  className="form-control"  placeholder="Enter Building Name"/>
   </div>
   <div className="form-group col-lg-3 pt-3  pb-5">
@@ -181,7 +184,7 @@ class App extends React.Component{
     <input  name='street' value={this.state.street} onChange={this.handleState} className="form-control"  placeholder="Enter Street"/>
   </div>
   <div className="form-group col-lg-3 pt-3  pb-5">
-    <label>Area</label>
+    <label>Area <sup className='mandatory'><FaStarOfLife/></sup></label>
     <input  name='area' value={this.state.area} onChange={this.handleState} className="form-control"  placeholder="Enter Area"/>
   </div>
   <div className="form-group col-lg-3  pb-5">

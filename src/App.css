@@ -63,3 +63,7 @@
   width:200px !important;
   line-height: 20px !important;
 }
+.mandatory{
+  color: red;
+  font-size: 8px;
+}
