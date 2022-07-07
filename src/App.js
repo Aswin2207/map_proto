@@ -231,9 +231,9 @@ class App extends React.Component{
   }
       </div>
     <div className='row'>
-      <div className=' btnCont col-lg-12 d-flex justify-content-center'>
+      <div className=' btnCont d-flex justify-content-center'>
     <div className="text-center mt-3 col-lg-3 ">
-        <button type="submit" className="btn btn-primary" onClick={this.getLocation}>Get Loction</button>
+        <button type="submit" className="btn btn-primary" onClick={this.getLocation}>Get Location</button>
         </div>
         <div className="text-center mt-3 col-lg-3">
         <button type="submit" className="btn btn-primary" disabled={this.state.location ===""}  onClick={this.getElevation}>Get Elevation</button>
